@@ -183,3 +183,8 @@ class SpatialMaxpool(tf.keras.layers.Layer):
 
     def call(self, inputs, **kwargs):
         return spatial_max_pool(inputs, self.n_theta)
+
+
+class MaxpoolOrientation(tf.keras.layers.Layer):
+    def call(self, inputs, **kwargs):
+        return tf.math.reduce_max(inputs, axis=3)
